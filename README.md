@@ -28,6 +28,7 @@ $ cat external-scripts.json
 $ export HUBOT_RELEASE_GITHUB_TOKEN="github_token_here"
 
 # optional
+$ export HUBOT_RELEASE_GITHUB_FQDN="github.com" # for hubot-slack attachments
 $ export HUBOT_RELEASE_HEAD="staging" # defaults to "master"
 $ export HUBOT_RELEASE_BASE="master" # defaults to "release"
 $ export HUBOT_RELEASE_DEFAULT_OWNER="ttskch"

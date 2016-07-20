@@ -1,6 +1,6 @@
 {
   "name": "hubot-github-pr-release",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Create a release pull request on GitHub via hubot.",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,7 @@
     "url": "https://github.com/ttskch/hubot-github-pr-release.git"
   },
   "keywords": [
+    "slack",
     "hubot",
     "hubot-scripts",
     "github-pr-release",
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/ttskch/hubot-github-pr-release#readme",
   "dependencies": {
+    "hubot-slack": "^3.4.2",
     "github-pr-release": "^1.2.0",
     "underscore": "^1.8.3"
   }
