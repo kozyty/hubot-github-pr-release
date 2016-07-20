@@ -36,20 +36,20 @@ doRelease = (owner, repo, msg, robot) ->
         robot.emit 'slack.attachment',
           message: msg.message
           content: [{
-            pretext: "Created release pull request for #{process.env.HUBOT_RELEASE_GITHUB_FQDN}",
-            color: "good",
-            author_name: "#{owner}/#{repo}",
-            author_link: "https://#{process.env.HUBOT_RELEASE_GITHUB_FQDN}/#{owner}/#{repo}",
-            title: "#{pr.title}",
-            title_link: "#{pr.html_url}",
-            text: "Pull request is #{process.env.HUBOT_RELEASE_HEAD} to #{process.env.HUBOT_RELEASE_BASE} branch",
+            pretext: "Created release pull request for #{process.env.HUBOT_RELEASE_GITHUB_FQDN}"
+            color: "good"
+            author_name: "#{owner}/#{repo}"
+            author_link: "https://#{process.env.HUBOT_RELEASE_GITHUB_FQDN}/#{owner}/#{repo}"
+            title: "#{pr.title}"
+            title_link: "#{pr.html_url}"
+            text: "Pull request is #{process.env.HUBOT_RELEASE_HEAD} to #{process.env.HUBOT_RELEASE_BASE} branch"
             fields: [{
-              title: "State",
-              value: "#{pr.state}",
-              short: false
-            }],
-            footer: "hubot",
-            footer_icon: "https://hubot.github.com/assets/images/layout/hubot-avatar@2x.png",
+              title: "State"
+              value: "#{pr.state}"
+              short: true
+            }]
+            footer: "hubot"
+            footer_icon: "https://hubot.github.com/assets/images/layout/hubot-avatar@2x.png"
             ts: msg.message.rawMessage.ts
           }]
     .catch (err) ->
@@ -59,19 +59,19 @@ doRelease = (owner, repo, msg, robot) ->
         robot.emit 'slack.attachment',
           message: msg.message
           content: [{
-            pretext: "Created release pull request for #{process.env.HUBOT_RELEASE_GITHUB_FQDN}",
-            color: "warning",
-            author_name: "#{owner}/#{repo}",
-            author_link: "https://#{process.env.HUBOT_RELEASE_GITHUB_FQDN}/#{owner}/#{repo}",
-            title: "Cannot created PR",
-            text: err.message,
+            pretext: "Created release pull request for #{process.env.HUBOT_RELEASE_GITHUB_FQDN}"
+            color: "warning"
+            author_name: "#{owner}/#{repo}"
+            author_link: "https://#{process.env.HUBOT_RELEASE_GITHUB_FQDN}/#{owner}/#{repo}"
+            title: "Cannot created PR"
+            text: err.message
             fields: [{
-              title: "Status",
-              value: "Error",
-              short: false
-            }],
-            footer: "hubot",
-            footer_icon: "https://hubot.github.com/assets/images/layout/hubot-avatar@2x.png",
+              title: "State"
+              value: "error"
+              short: true
+            }]
+            footer: "hubot"
+            footer_icon: "https://hubot.github.com/assets/images/layout/hubot-avatar@2x.png"
             ts: msg.message.rawMessage.ts
           }]
 
